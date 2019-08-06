@@ -10,5 +10,6 @@ public class Test {
         System.out.println("hello world");
         System.out.println("提交github");
         System.out.println("修改之后");
+        System.out.println("改bug");
     }
 }
