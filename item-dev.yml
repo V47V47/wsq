@@ -1,0 +1,35 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/leyou?characterEncoding=utf-8
+    username: root
+    password: root
+  rabbitmq:
+    host: localhost
+    port: 5672
+    virtual-host: /leyou
+    username: leyou
+    password: leyou
+
+mybatis:
+  mapper-locations: dao/*.xml       #将来映射文件所在目录
+  configuration:
+    map-underscore-to-camel-case: true      #驼峰命名
+  type-aliases-package: com.wsq.item.domain     #别名
+logging:
+  level:
+    com.wsq: debug   #日志输出级别
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+    registry-fetch-interval-seconds: 5
+mapper:
+  wrap-keyword: "`{0}`"   #SQL语句中 字段是关键字 自动加一音符
+
+
